@@ -55,9 +55,5 @@ describe('RemoteRunner', function () {
 
             later().expect(collection.remoteDone).to.have.been.called.then.notify(done);
         });
-
-        it('if listObjects result is truncated, fetch more of the list') ;
-
-
     });
 });

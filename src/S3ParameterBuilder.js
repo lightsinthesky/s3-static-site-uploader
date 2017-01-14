@@ -1,4 +1,5 @@
 var mime = require('mime');
+var compressible = require('compressible');
 
 var createParams = {
     createBucket:function(bucketName){
@@ -24,15 +25,17 @@ var createParams = {
             Policy:policyString
         };
     },
-    putObject:function(bucketName, key, body, mimeType){
+    putObject:function(bucketName, key, body, mimeType, compressed) {
         mimeType = mimeType || mime.lookup(key);
 
-        // console.log(body);
         return {
             Bucket:bucketName,
             Key: key,
-            Body: body,//new Buffer(body),
-            ContentType: mimeType
+            Body: body,
+            ContentType: mimeType,
+            ContentEncoding: compressed && compressible(mimeType) 
+                ? 'gzip' 
+                : undefined
         };
     },
     putBucketWebsite:function(bucketName,index,error) {
