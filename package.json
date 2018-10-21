@@ -1,6 +1,6 @@
 {
-  "name": "s3-upload-static",
-  "version": "0.1.0",
+  "name": "s3-upload-static-compression",
+  "version": "0.1.1",
   "description": "Allows you to upload static files to S3 buckets.",
   "main": "main.js",
   "bin": {
@@ -13,13 +13,7 @@
     "type": "git",
     "url": "git://github.com/jamestalmage/s3-static-site-uploader.git"
   },
-  "keywords": [
-    "Amazon",
-    "S3",
-    "Node",
-    "Upload",
-    "Static"
-  ],
+  "keywords": ["Amazon", "S3", "Node", "Upload", "Static"],
   "author": "James Talmage",
   "license": "MIT",
   "bugs": {
